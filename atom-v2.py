@@ -34,7 +34,8 @@ def transcribe(audio):
         temperature=0.5,
     )
 
-    system_message = response["choices"][0]["text"].replace("Alice:", "").strip()
+    system_message = response["choices"][0]["text"]
+    system_message = system_message.replace("Alice:", "").replace("ATOM:", "").strip()
     messages.append(f"{system_message}")
 
     voice = user.get_voices_by_name("Antoni")[0]
