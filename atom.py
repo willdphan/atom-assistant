@@ -13,7 +13,7 @@ api_key = config.ELEVEN_LABS_API_KEY
 from elevenlabslib import ElevenLabsUser
 user = ElevenLabsUser(api_key)
 
-messages = ["You are an AI executive assistant named TARS."]
+messages = ["You are an AI executive assistant named ATOM."]
 
 def transcribe(audio):
     global messages
@@ -34,7 +34,7 @@ def transcribe(audio):
     )
 
     system_message = response["choices"][0]["text"].replace("Alice:", "").strip()
-    messages.append(f"TARS: {system_message}")
+    messages.append(f"{system_message}")
 
     voice = user.get_voices_by_name("Antoni")[0]
     audio = voice.generate_audio_bytes(system_message)
@@ -51,7 +51,7 @@ iface = gr.Interface(
     fn=transcribe,
     inputs=gr.Audio(source="microphone", type="filepath", placeholder="Please start speaking..."),
     outputs="text",
-    title="TARS my user's executive assistant with a sense of humor!",
+    title="ATOM my user's executive assistant with a sense of humor!",
     description="Please ask me your question and I will respond both verbally and in text to you...",
 )
 
