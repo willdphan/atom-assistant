@@ -1,4 +1,4 @@
-# Jarvis, AI Personal Asistant
+# ATOM, sketch of AI Personal Asistant
 
 This repository uses `OpenAI`'s Whisper and `Gradio` to generate audio responses from a personal assistant named Genie.
 
